@@ -1,1 +1,467 @@
 /* You can add global styles to this file, and also import other style files */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding:1.5px;
+}
+
+body {
+    color: #222;
+    font-family: system-ui, sans-serif;
+    padding-bottom: 50px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.container .logo a {
+    color:#fff;
+    font-size: 2.4rem;
+}
+
+.nav {
+    background-color: rgb(151, 106, 106);
+    transition: all 0.3s ease-in-out;
+    box-shadow: rgba(0, 0, 0, 0.10) 0px 5px 15px;
+}
+
+.nav .container {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    transition: all 0.3s ease-in-out;
+}
+
+.nav ul {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    justify-content: center;
+}
+
+.nav a {
+    text-decoration: none;
+    color: #fff;
+    padding: 7px 15px;
+    font-size: 20px;
+    transition: all 0.3s ease-in-out;
+}
+
+.nav.active {
+    background-color: #fff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.nav.active a {
+    color: #fff;
+}
+
+.nav.active .container {
+    padding: 10px 0;
+}
+
+.nav a.current,
+.nav a:hover {
+    color: red;
+}
+
+.hero {
+    background-image: url('https://images.unsplash.com/photo-1531297484001-80022131f5a1?q=80&w=1420&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom-center;
+    height: 100vh;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin-bottom: 20px;
+    z-index: -2;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: -1;
+}
+
+.hero h1 {
+    font-size: 46px;
+    margin: -20px 0 20px;
+}
+
+.hero p {
+    font-size: 20px;
+    letter-spacing: 1px;
+}
+
+.content h2,
+.content h3 {
+    font-size: 150%;
+    margin: 20px 0;
+}
+
+.content p {
+    color: #555;
+    line-height: 1.6;
+    letter-spacing: 1px;
+}
+
+.hero .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 67rem;
+}
+
+.btn {
+    display: flex;
+    column-gap: 20px;
+}
+
+.bn30 {
+    border: 5em;
+    cursor: pointer !important;
+    outline: none;
+    font-size: 16px;
+    -webkit-transform: translate(0);
+    transform: translate(0);
+    background-image: linear-gradient(45deg, #4568dc, #b06ab3);
+    padding: 0.7em 2em;
+    border-radius: 65px;
+    box-shadow: 1px 1px 10px rgba(255, 255, 255, 0.438);
+    -webkit-transition: box-shadow 0.25s;
+    transition: box-shadow 0.25s;
+    color: white;
+}
+
+.bn30 .text {
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-image: linear-gradient(45deg, #4568dc, #b06ab3);
+}
+
+.bn30:after {
+    content: "";
+    border-radius: 18px;
+    position: absolute;
+    margin: 4px;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: -1;
+    background: #0e0e10;
+}
+
+.bn30:hover {
+    background-image: linear-gradient(-45deg, #4568dc, #b06ab3);
+    box-shadow: 0 12px 24px rgba(128, 128, 128, 0.1);
+}
+
+.bn30:hover .text {
+    background-image: linear-gradient(-45deg, #4568dc, #b06ab3);
+}
+
+
+.project {
+    height: 580px;
+    background-color: whitesmoke;
+    margin-top: -20px;
+    padding: 30px;
+}
+
+.project .heading {
+    display: flex;
+    justify-content: center;
+}
+
+.main-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 25px;
+    column-gap: 30px;
+}
+
+.cardBox {
+    width: 300px;
+    height: 400px;
+    position: relative;
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 10px 0px,
+        rgba(0, 0, 0, 0.5) 0px 2px 25px 0px;
+}
+
+.card {
+    width: 95%;
+    height: 95%;
+    background: #000814;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    color: #ffffff;
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 30px 60px -12px inset,
+        rgba(0, 0, 0, 0.5) 0px 18px 36px -18px inset;
+}
+
+.card p{
+    margin-top: -8px;
+    margin-bottom: 1rem;
+    text-align: justify;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 19px;
+}
+
+.card .check{
+    display: flex;
+    margin-top: -25px;
+    justify-content: center;
+    align-items: center;
+}
+
+.card h2,
+span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 3rem;
+    font-weight: 800;
+    pointer-events: none;
+}
+
+span {
+    top: 75%;
+}
+
+.card .content h3 {
+    font-size: 3rem;
+    padding-bottom: 10px;
+}
+
+.card .content p {
+    font-size: 1.6rem;
+    line-height: 25px;
+}
+
+.cardBox::before {
+    content: "";
+    position: absolute;
+    width: 40%;
+    height: 150%;
+    background: #40E0D0;
+    background: -webkit-linear-gradient(to right, #FF0080, #FF8C00, #40E0D0);
+    background: linear-gradient(to right, #FF0080, #FF8C00, #40E0D0);
+    animation: glowing01 5s linear infinite;
+    transform-origin: center;
+    animation: glowing 5s linear infinite;
+}
+
+@keyframes glowing {
+    0% {
+        transform: rotate(0);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.skills{
+    height: 550px;
+    background-color: rgb(228, 151, 151);
+    margin-top: -20px;
+    padding: 80px;
+    margin-bottom: 50px;
+}
+
+.skills .heading{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.skills .heading h1{
+    color: white;
+}
+
+.skills .prog .main .txt{
+    color: white;
+}
+
+.skills .prog{
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+}
+
+.skills .prog .check{
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+}
+
+.gradient-brand-color {
+    background-image: -webkit-linear-gradient(0deg, #376be6 0%, #6470ef 100%);
+    background-image: -ms-linear-gradient(0deg, #376be6 0%, #6470ef 100%);
+    color: #fff;
+}
+.contact-info__wrapper {
+    overflow: hidden;
+    border-radius: .625rem .625rem 0 0
+}
+
+@media (min-width: 1024px) {
+    .contact-info__wrapper {
+        border-radius: 0 .625rem .625rem 0;
+    }
+}
+.contact-info__list span.position-absolute {
+    left: 0
+}
+.z-index-101 {
+    z-index: 101;
+}
+.list-style--none {
+    list-style: none;
+}
+.contact__wrapper {
+    background-color: #fff;
+    /* border-radius: 0 0 .625rem .625rem */
+}
+
+  .social-menu {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+  }
+  .social-btn {
+    list-style: none;
+    width: 60px;
+    height: 60px;
+    background: #fff;
+    margin: 15px;
+    border-radius: 30%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 10px 10px -5px rgb(255,255,255,0.1);
+    transition: all 0.3s;
+    z-index: 10px;
+  }
+  .social-btn a {
+    text-decoration: none;
+    color: #fff;
+  }
+  .social-btn:hover a {
+    color: #fff;
+  }
+  .social-menu .social-btn::before {
+    content: attr(tooltip);
+    position: absolute;
+    top: 0;
+    font-size: 0.9em;
+    font-weight: bold;
+    z-index: -1;
+    opacity: 0;
+    pointer-events: auto;
+    background: #fff;
+    padding: 10px;
+    color: #000;
+    letter-spacing: 1px;
+    transition: all 0.3s ease-out;
+  }
+  .social-menu .social-btn::after {
+    content: '';
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    top: 0;
+    opacity: 0;
+    background: #fff;
+    transform: rotate(45deg);
+    left: 20%;
+    z-index: -2;
+    transition: 
+      all 0.3s ease-out;
+  }
+  .social-menu .social-btn:hover::before {
+    top: -45px;
+    opacity: 1;
+  }
+  .social-btn:hover::after {
+    top: -12px;
+    opacity: 1;
+  }
+  .facebook a {
+    color: #3b5999;
+  }
+  .facebook:hover,
+  .facebook:hover .social-btn:before,
+  .facebook:hover .social-btn:after {
+    background: #3b5999;
+  }
+  .instagram a {
+    color: #962fbf;
+  }
+  .instagram:hover,
+  .instagram:hover .social-btn:before,
+  .instagram:hover .social-btn:after {
+    background: #962fbf;
+  }
+  .pinterest a {
+    color: #c8232c;
+  }
+  .pinterest:hover,
+  .pinterest:hover .social-btn:before,
+  .pinterest:hover .social-btn:after {
+    background: #c8232c;
+  }
+  .linkedin a {
+    color: #0072b1;
+  }
+  .linkedin:hover,
+  .linkedin:hover .social-btn:before,
+  .linkedin:hover .social-btn:after {
+    background: #0072b1;
+  }
+  
+  .footer{
+    background: black;
+    height: 57px;
+    margin-bottom: -50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .footer .txt{
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 10px;
+  }
